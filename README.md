@@ -116,7 +116,7 @@
    3. DateTime - время операции (тип: time; ограничений: нет)
    4. Action - какая операция была произведена (тип: varchar(32); ограничение: нет)
 
-![image](https://user-images.githubusercontent.com/79207246/195422014-d77dd2aa-d2dd-4054-9f20-9a78f97c229c.png)
+![image](https://user-images.githubusercontent.com/79207246/195423698-0d7a4162-de06-4025-945e-dd26a9a28e33.png)
 
    
    
