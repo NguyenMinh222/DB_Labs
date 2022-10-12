@@ -121,7 +121,12 @@
    2. ID_Zakazchika - уникальный индификатор, внешний ключ (тип: int(16); ограничение: обязательное поле)
    3. DateTime - время операции (тип: time; ограничений: нет)
    4. Action - какая операция была произведена (тип: varchar(32); ограничение: нет)
+
+![image](https://user-images.githubusercontent.com/79207246/195419262-3c8ced48-7802-4054-87c7-b1e4478f82c0.png)
+
    
+   
+  
 ![image](https://user-images.githubusercontent.com/79207246/195278613-f7fea5a7-d1a1-4378-8ada-eb7b59425074.png)
 
 
