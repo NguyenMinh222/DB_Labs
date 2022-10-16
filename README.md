@@ -118,7 +118,9 @@
 
 ![image](https://user-images.githubusercontent.com/79207246/195423698-0d7a4162-de06-4025-945e-dd26a9a28e33.png)
 
-   
+ ## Нормалищованная схема
+ ![image](https://user-images.githubusercontent.com/79207246/196024103-436a977c-7eb6-4471-bf33-1ebbaa2c3cac.png)
+
    
   
 ![image](https://user-images.githubusercontent.com/79207246/195278613-f7fea5a7-d1a1-4378-8ada-eb7b59425074.png)
