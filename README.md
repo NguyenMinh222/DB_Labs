@@ -125,8 +125,9 @@
 
 ![image](https://user-images.githubusercontent.com/79207246/195423698-0d7a4162-de06-4025-945e-dd26a9a28e33.png)
 
- ## Нормалищованная схема
-![БД(МБИ)](https://user-images.githubusercontent.com/79207246/196650896-b0ca718d-9ac8-4c6d-9b98-6bf716ef7219.png)
+ ## Нормализованная схема
+![БД(МБИ)](https://user-images.githubusercontent.com/79207246/196667784-8decc442-c546-4e29-abec-5dc289d72a32.png)
+
 
 
    
