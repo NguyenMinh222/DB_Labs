@@ -65,3 +65,86 @@ id_product int(4) auto_increment primary key,
 id_view int(4),
 foreign key (id_view) references viewofproduct (id_view) on delete cascade
 ); 
+
+create table ip
+(
+id_ip int(4) auto_increment primary key,
+id_contact int(4),
+foreign key (id_contact) references contact (id_contact) on delete cascade
+); 
+
+create table organization_name 
+(
+ id_org int(4) auto_increment primary key,
+ organization_name varchar(32) not null,
+ id_contact int(4), foreign key (id_contact) references contact (id_contact) on delete cascade
+ );
+ 
+ create table postavshchik
+(
+id_post int(4) auto_increment primary key,
+id_author int(4),
+foreign key (id_author) references authorization (id_author) on delete cascade,
+id_passport int(4),
+foreign key (id_passport) references passport (id_passport) on delete cascade,
+id_status_org int(4),
+foreign key (id_status_org) references organization_name (id_org) on delete cascade,
+id_status_ip int(4),
+foreign key (id_status_ip) references ip (id_ip) on delete cascade,
+INN  varchar(16) not null unique,
+ constraint check_INN check (INN in ('1','2','3','4','5','6','7','8','9','0')),
+checkingAcc varchar(16) not null unique,
+ constraint check_checkingAcc check (checkingAcc in ('1','2','3','4','5','6','7','8','9','0'))
+);
+
+create table zakazchik
+(
+id_zakazchik int(4) auto_increment primary key,
+email varchar(32) not null unique,
+id_author int(4),
+foreign key (id_author) references authorization (id_author) on delete cascade,
+id_passport int(4),
+foreign key (id_passport) references passport (id_passport) on delete cascade
+);
+
+create table user
+(
+id_user int(4) auto_increment primary key,
+id_post int(4),
+foreign key (id_post) references postavshchik (id_post) on delete cascade,
+id_zakazchik int(4),
+foreign key (id_zakazchik) references zakazchik (id_zakazchik) on delete cascade
+);
+
+create table priceofproduct
+(
+id_price int(4) auto_increment primary key,
+id_product int(4),
+foreign key (id_product) references product (id_product) on delete cascade,
+price int(16) not null,
+constraint positive_price check (price>=0),
+id_post int(4),
+foreign key (id_post) references postavshchik (id_post) on delete cascade
+);
+
+create table log
+(
+id_log int(4) auto_increment primary key,
+id_author int(4),
+foreign key (id_author) references authorization (id_author) on delete cascade,
+Date_Time timestamp,
+Actions varchar(64)
+);
+
+create table zakaz
+(
+id_zakaz int(4) auto_increment primary key,
+id_zakazchik int(4),
+foreign key (id_zakazchik) references zakazchik (id_zakazchik) on delete cascade,
+Product_Description varchar(64) not null,
+Place_of_delivery varchar(32) not null,
+Price_of_delivery int(16),
+constraint positive_Price_of_delivery check (Price_of_delivery >=0),
+Sum int(16) not null,
+constraint positive_Sum check (Sum >=0)
+);
