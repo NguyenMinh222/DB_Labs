@@ -36,3 +36,33 @@ use shop;
 
 insert organization_name(organization_name, id_contact)
 values ('ОАО Аист',1)
+
+//passport
+use mainshop
+
+insert passport(passportNumber, dateRelease, validUntil)
+values ('VC51358','22.10.2000','10.12.2022')
+
+insert passport(passportNumber, dateRelease, validUntil)
+values ('MC15684','12.10.2000','12.12.2022')
+
+//postavshchik
+use mainshop;
+
+insert postavshchik(id_author,id_passport, id_status_ip, INN, checkingAcc)
+values(1,1,1,'5165156165','1315618615353')
+
+//zakazchik
+use mainshop;
+
+insert zakazchik(email, id_author,id_passport)
+values('dasha@gmail.com',2,2)
+
+//user
+use mainshop;
+
+insert user(id_post)
+values (1)
+
+insert user(id_zakazchik)
+values (1)
