@@ -32,10 +32,9 @@ telephoneNumber varchar(16),
  create table passport
  (
 id_passport int(4) auto_increment primary key,
-dateRelease varchar(16) not null,
- constraint check_dateRelease check (dateRelease in ('.','1','2','3','4','5','6','7','8','9','0')),
-validUntil varchar(16) not null,
-  constraint  check_validUntil check (validUntil in ('.','1','2','3','4','5','6','7','8','9','0'))
+passportNumber varchar(16) unique,
+dateRelease date not null ,
+validUntil date not null
  );
  
 create table contact
@@ -75,7 +74,7 @@ foreign key (id_contact) references contact (id_contact) on delete cascade
 create table organization_name 
 (
  id_org int(4) auto_increment primary key,
- organization_name varchar(32) not null,
+ organization_name varchar(32) not null unique,
  id_contact int(4), foreign key (id_contact) references contact (id_contact) on delete cascade
  );
  
@@ -91,9 +90,7 @@ foreign key (id_status_org) references organization_name (id_org) on delete casc
 id_status_ip int(4),
 foreign key (id_status_ip) references ip (id_ip) on delete cascade,
 INN  varchar(16) not null unique,
- constraint check_INN check (INN in ('1','2','3','4','5','6','7','8','9','0')),
-checkingAcc varchar(16) not null unique,
- constraint check_checkingAcc check (checkingAcc in ('1','2','3','4','5','6','7','8','9','0'))
+checkingAcc varchar(16) not null unique
 );
 
 create table zakazchik
