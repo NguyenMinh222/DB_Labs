@@ -44,7 +44,6 @@ id_contact int(4) auto_increment primary key,
 email varchar(32) not null unique,
 urAdress varchar(32) not null,
 phoneNumber varchar(16) not null unique
-  constraint  check_phoneNumber check (phoneNumber in ('+','1','2','3','4','5','6','7','8','9','0'))
 );
 
 create table viewofproduct
