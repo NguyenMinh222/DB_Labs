@@ -66,3 +66,34 @@ values (1)
 
 insert user(id_zakazchik)
 values (1)
+
+//zakaz
+use mainshop
+
+insert zakaz(id_zakazchik, Product_Description, Place_of_delivery, price_of_delivery,Sum)
+values(1,'Кофта очень высокого качества. Сделано из не знаю чего, но все ок!','Белпочта',0,55)
+
+//type_of_tovar
+insert type_of_tovar(type_of_tovar)
+values ('Женская верхняя одежда')
+ 
+//manufactor
+insert manufactor(manufactor,adress,telephoneNumber)
+values('ABFactory','Немига 23','+333333333')
+
+//quality
+ insert quality(quality)
+ values('хорошее')
+ 
+ //viewofproduct
+ insert viewofproduct(nameofproduct,id_type,id_izg,id_quality)
+ values('Кофта осенняя',1,1,1)
+ 
+ //product
+ insert product(id_view)
+values(1)
+
+//proceofproduct
+ 
+insert priceofproduct(id_product,price,id_post)
+values(1,55,1)
