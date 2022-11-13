@@ -36,3 +36,46 @@ FROM authorization A, authorization B
 WHERE A.id_author <> B.id_author
 AND A.Name = B.Name
 ORDER BY A.Name;
+
+    d) CROSS JOIN
+    
+use mainshop;
+SELECT authorization.Name, zakazchik.id_zakazchik, zakazchik.email
+FROM authorization
+CROSS JOIN zakazchik;
+
+3. a) Group By
+
+SELECT COUNT(id_author), Name
+FROM authorization
+GROUP BY Name
+ORDER BY COUNT(id_author) DESC;
+ 
+   b) Having
+
+SELECT COUNT(id_author), Name
+FROM authorization
+GROUP BY Name
+Having COUNT(id_author) > 1;
+ 
+   c) Union
+
+SELECT email FROM zakazchik
+UNION
+SELECT email FROM contact
+ORDER BY email;
+
+4. a) EXISTS
+SELECT INN
+FROM postavshchik
+WHERE EXISTS (SELECT price FROM priceofproduct 
+WHERE priceofproduct.id_post = postavshchik.id_post AND Price < 60);
+
+    b)CASE 
+SELECT id_price, price,
+CASE
+    WHEN price > 100 THEN 'The price is greater than 100'
+    WHEN price < 100 THEN 'The price is less than 100'
+    ELSE 'The price is 100'
+END AS priceText
+FROM priceofproduct;
