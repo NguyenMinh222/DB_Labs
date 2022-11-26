@@ -1,0 +1,7 @@
+use mainshop;
+
+
+show triggers ;
+
+
+
