@@ -24,22 +24,21 @@ update authorization set Name = 'Daria' where Login =  'dasha12@gmail.com';
 select * from log;
 
 //Procedure
-delimiter //
+
 CREATE PROCEDURE ProductSummary()
 BEGIN
     SELECT * FROM zakaz 
     where Sum > 500;
-END//
+END
 
 call ProductSummary;
 
 //Passport
-delimiter //
 CREATE PROCEDURE PassportDateRelease()
 BEGIN
     SET @dateRelease := "22.10.2000";
     SELECT * FROM passport 
     where passportNumber like'V%';
-END//
+END
 
 call PassportDateRelease();
